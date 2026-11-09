@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>O Príncipe e o Mendigo — Mark Twain</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', cursive, sans-serif; }
+        html { scroll-behavior: smooth; }
+        body { line-height: 1.6; }
+        
+        /* Slides / Seções */
+        .slide {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 3rem 2rem;
+            text-align: center;
+            color: #2b2b2b;
+        }
+        h1 { font-size: 2.8rem; margin-bottom: 1rem; }
+        h2 { font-size: 2rem; margin-bottom: 1.5rem; }
+        p, ul { font-size: 1.2rem; max-width: 800px; }
+        ul { list-style: none; gap: 0.8rem; display: flex; flex-direction: column; }
+        .destaque { font-weight: bold; font-size: 1.3rem; margin: 1rem 0; }
+        .card { background: rgba(255,255,255,0.85); padding: 2rem; border-radius: 20px; box-shadow: 0 8px 20px rgba(0,0,0,0.15); max-width: 900px; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; margin-top: 1.5rem; }
+        .personagem { padding: 1.5rem; border-radius: 15px; }
+        
+        /* FUNDOS DIFERENTES PARA CADA PÁGINA 🎨 */
+        .s1 { background: linear-gradient(135deg, #6a1b9a, #ffc107); color: white; }
+        .s2 { background: linear-gradient(135deg, #e3f2fd, #bbdefb); }
+        .s3 { background: #fff9c4; }
+        .s4 { background: linear-gradient(135deg, #c8e6c9, #f8bbd0); }
+        .s5 { background: linear-gradient(135deg, #ffe0b2, #d7ccc8); }
+        .s6 { background: linear-gradient(135deg, #e1bee7, #ffecb3); }
+        .s7 { background: linear-gradient(135deg, #bbdefb, #c8e6c9, #f8bbd0); }
+        .s8 { background: #fafafa; }
+        
+        /* Navegação */
+        .navegacao { position: fixed; bottom: 2rem; right: 2rem; display: flex; gap: 0.5rem; z-index: 100; }
+        .nav-btn {
+            width: 45px; height: 45px; border-radius: 50%; border: none;
+            background: #6a1b9a; color: white; font-weight: bold; cursor: pointer;
+            transition: all 0.3s;
+        }
+        .nav-btn:hover { transform: scale(1.2); background: #ffc107; color: #2b2b2b; }
+        .frase { font-style: italic; margin-top: 1.5rem; font-size: 1.3rem; }
+        .emoji { font-size: 1.5rem; margin-right: 0.5rem; }
+    </style>
+</head>
+<body>
+
+<!-- Navegação entre páginas -->
+<div class="navegacao">
+    <button class="nav-btn" onclick="irPara(1)">1</button>
+    <button class="nav-btn" onclick="irPara(2)">2</button>
+    <button class="nav-btn" onclick="irPara(3)">3</button>
+    <button class="nav-btn" onclick="irPara(4)">4</button>
+    <button class="nav-btn" onclick="irPara(5)">5</button>
+    <button class="nav-btn" onclick="irPara(6)">6</button>
+    <button class="nav-btn" onclick="irPara(7)">7</button>
+    <button class="nav-btn" onclick="irPara(8)">8</button>
+</div>
+
+<!-- 📌 PÁGINA 1 — CAPA -->
+<section class="slide s1" id="p1">
+    <div class="card" style="background: rgba(255,255,255,0.2);">
+        <h1>👑 O Príncipe e o Mendigo 🧹</h1>
+        <p style="font-size: 1.5rem;">Duas vidas, uma cara, muitas aventuras!</p>
+        <p class="destaque">Autor: Mark Twain</p>
+        <p class="frase">"Não julgues ninguém pelas roupas que veste" ✨</p>
+    </div>
+</section>
+
+<!-- 📌 PÁGINA 2 — O AUTOR -->
+<section class="slide s2" id="p2">
+    <div class="card">
+        <h2>✍️ Quem é Mark Twain?</h2>
+        <ul>
+            <li><span class="emoji">📝</span>Nome verdadeiro: Samuel Langhorne Clemens 🇺🇸</li>
+            <li><span class="emoji">📅</span>Viveu de 1835 a 1910 nos Estados Unidos</li>
+            <li><span class="emoji">⛴️</span>Trabalhou como piloto de barco, jornalista e impressor</li>
+            <li><span class="emoji">📚</span>Também escreveu: <i>As Aventuras de Tom Sawyer</i> e <i>Huckleberry Finn</i></li>
+            <li><span class="emoji">💡</span>Escrevia com humor e coragem para falar sobre o que estava errado</li>
+        </ul>
+    </div>
+</section>
+
+<!-- 📌 PÁGINA 3 — PERSONAGENS -->
+<section class="slide s3" id="p3">
+    <div class="card">
+        <h2>👀 Dois meninos, a mesma cara!</h2>
+        <div class="grid">
+            <div class="personagem" style="background: #fff3e0; border: 3px solid #ffc107;">
+                <h3>👑 Eduardo Tudor</h3>
+                <p>Príncipe da Inglaterra</p>
+                <p>Mora no palácio, tem servos, comida farta e roupas bonitas</p>
+                <p>Mas se sente preso às regras e muito solitário</p>
+            </div>
+            <div class="personagem" style="background: #f5f5f5; border: 3px solid #795548;">
+                <h3>🧹 Tom Canty</h3>
+                <p>Menino mendigo</p>
+                <p>Mora numa rua pobre, numa casa apertada</p>
+                <p>Sonha em conhecer o palácio e o mundo lá fora</p>
+            </div>
+        </div>
+        <p class="destaque" style="margin-top: 1.5rem;">✨ Eles são IDÊNTICOS! Ninguém consegue diferenciá-los! ✨</p>
+    </div>
+</section>
+
+<!-- 📌 PÁGINA 4 — O ENCONTRO E A TROCA -->
+<section class="slide s4" id="p4">
+    <div class="card">
+        <h2>🔄 O dia em que tudo mudou!</h2>
+        <ul>
+            <li>🌸 Tom sonha em ver o palácio de perto</li>
+            <li>🚪 Os guardas o empurram, mas Eduardo o vê e o chama para entrar</li>
+            <li>😮 Conversam e descobrem que são iguais!</li>
+            <li>💡 Têm uma ideia: <strong>trocar de roupa e de vida!</strong></li>
+            <li>😰 A brincadeira sai do controle e não conseguem voltar rápido...</li>
+        </ul>
+    </div>
+</section>
+
+<!-- 📌 PÁGINA 5 — EDUARDO NA RUA -->
+<section class="slide s5" id="p5">
+    <div class="card">
+        <h2>🏙️ Eduardo descobre o mundo real</h2>
+        <ul>
+            <li>😂 Ninguém acredita que ele é príncipe! Todos riem dele</li>
+            <li>🥖 Sente fome, frio e cansaço — coisas que nunca conheceu</li>
+            <li>👨‍👩‍👧 Conhece a família de Tom e vê como o povo sofre</li>
+            <li>⚖️ Descobre que o povo precisa de justiça e bondade</li>
+            <li class="destaque">💡 Lição: o mundo não é feito só de reis e palácios</li>
+        </ul>
+    </div>
+</section>
+
+<!-- 📌 PÁGINA 6 — TOM NO TRONO -->
+<section class="slide s6" id="p6">
+    <div class="card">
+        <h2>👑 Tom no palácio... mas é feliz?</h2>
+        <ul>
+            <li>🤔 Todos acham que ele enlouqueceu</li>
+            <li>🍽️ Não sabe usar talheres, esquece as regras do palácio</li>
+            <li>💛 Tem tudo, mas sente falta da liberdade</li>
+            <li>🤲 Começa a pensar no povo e a fazer coisas boas</li>
+            <li class="destaque">💡 Lição: riqueza não é o mesmo que felicidade</li>
+        </ul>
+    </div>
+</section>
+
+<!-- 📌 PÁGINA 7 — O FIM -->
+<section class="slide s7" id="p7">
+    <div class="card">
+        <h2>🤝 De volta às suas vidas!</h2>
+        <ul>
+            <li>✨ Depois de muitas aventuras, se reencontram</li>
+            <li>👑 Eduardo prova que é o verdadeiro príncipe e volta ao trono</li>
+            <li>❤️ Tom volta para a família com mais respeito e dignidade</li>
+            <li>🏆 Eduardo vira rei e governa com <strong>bondade e justiça</strong></li>
+            <li>🌈 Os dois continuam amigos para sempre!</li>
+        </ul>
+    </div>
+</section>
+
+<!-- 📌 PÁGINA 8 — LIÇÕES -->
+<section class="slide s8" id="p8">
+    <div class="card">
+        <h2>💎 O que aprendemos?</h2>
+        <ul style="margin-bottom: 2rem;">
+            <li>✅ Não julgue ninguém pelas roupas que veste</li>
+            <li>✅ Conheça a vida dos outros antes de criticar</li>
+            <li>✅ Riqueza não traz felicidade de verdade</li>
+            <li>✅ Justiça e bondade valem mais que ouro</li>
+            <li>✅ A amizade pode mudar tudo! 💛</li>
+        </ul>
+        <p class="destaque">Obrigada pela atenção! 🙌</p>
+    </div>
+</section>
+
+<script>
+// Função para navegar entre as páginas
+function irPara(numero) {
+    document.getElementById(`p${numero}`).scrollIntoView({ behavior: 'smooth' });
+}
+</script>
+</body>
+</html>
